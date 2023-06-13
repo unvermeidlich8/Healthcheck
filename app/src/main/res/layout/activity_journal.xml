@@ -1,0 +1,51 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <DatePicker
+        android:id="@+id/date_picker"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+
+    <Button
+        android:id="@+id/show_button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:text="show_data" />
+
+    <TextView
+        android:id="@+id/empty_text_view"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:text="no_data_for_date"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:visibility="gone" />
+
+    <TextView
+        android:id="@+id/tv_blood_pressure"
+        android:layout_width="match_parent"
+        android:layout_height="37dp"
+        android:text="дав." />
+
+    <TextView
+        android:id="@+id/tv_pulse"
+        android:layout_width="match_parent"
+        android:layout_height="37dp"
+        android:text="пульс" />
+
+    <TextView
+        android:id="@+id/tv_blood_sugar"
+        android:layout_width="match_parent"
+        android:layout_height="37dp"
+        android:text="сахар" />
+
+    <TextView
+        android:id="@+id/tv_blood_cholesterol"
+        android:layout_width="match_parent"
+        android:layout_height="37dp"
+        android:text=" холестерин" />
+
+</LinearLayout>

@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/gray"
+    android:orientation="vertical">
+
+    <TextView
+        android:id="@+id/dateLabel"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Выберите дату:" />
+
+    <DatePicker
+        android:id="@+id/datePicker"
+        android:layout_width="wrap_content"
+        android:layout_height="399dp"
+        android:calendarViewShown="false"
+        android:headerBackground="@color/teal_700"
+        android:spinnersShown="true" />
+
+    <TextView
+        android:id="@+id/bpLabel"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Артериальное давление (мм рт. ст.):" />
+
+    <EditText
+        android:id="@+id/bpInput"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:inputType="numberDecimal" />
+
+    <TextView
+        android:id="@+id/pulseLabel"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Пульс (ударов в минуту):" />
+
+    <EditText
+        android:id="@+id/pulseInput"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:inputType="number" />
+
+    <TextView
+        android:id="@+id/glucoseLabel"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Уровень сахара в крови (ммоль/л):" />
+
+    <EditText
+        android:id="@+id/glucoseInput"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:inputType="numberDecimal" />
+
+    <TextView
+        android:id="@+id/cholesterolLabel"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Уровень холестерина в крови (ммоль/л):" />
+
+    <EditText
+        android:id="@+id/cholesterolInput"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:inputType="numberDecimal" />
+
+    <Button
+        android:id="@+id/saveButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@color/teal_700"
+        android:text="Сохранить" />
+
+</LinearLayout>

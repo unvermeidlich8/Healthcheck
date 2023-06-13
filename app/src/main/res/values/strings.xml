@@ -1,0 +1,8 @@
+<resources>
+    <string name="app_name" translatable="false">Healthcheck</string>
+    <string name="log_in" translatable="false">Войти</string>
+    <string name="sign_up" translatable="false">Регистрация</string>
+    <string name="continu" translatable="false">Продолжить</string>
+    <string name="profile_head" translatable="false">Мой Профиль</string>
+
+</resources>

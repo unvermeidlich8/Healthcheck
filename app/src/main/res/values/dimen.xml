@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="margin">20dp</dimen>
+    <dimen name="big_margin">140dp</dimen>
+    <dimen name="double_margin">50dp</dimen>
+    <dimen name="padding">70dp</dimen>
+    <dimen name="button_width">180dp</dimen>
+    <dimen name="button_heighth">60dp</dimen>
+    <dimen name="back_button">60dp</dimen>
+
+</resources>
