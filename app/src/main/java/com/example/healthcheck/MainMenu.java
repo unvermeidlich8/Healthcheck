@@ -44,6 +44,21 @@ public class MainMenu extends AppCompatActivity {
                 startActivity(intent);
             }
         });
+        Analis.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(MainMenu.this,DeleteActivity.class);
+                startActivity(intent);
+            }
+        });
+        PersonalAcc.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(MainMenu.this,ValueByDate.class);
+                startActivity(intent);
+            }
+        });
+
 
     }
 

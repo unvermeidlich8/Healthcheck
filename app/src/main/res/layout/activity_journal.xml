@@ -1,19 +1,9 @@
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical">
-
-    <DatePicker
-        android:id="@+id/date_picker"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content" />
-
-    <Button
-        android:id="@+id/show_button"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_gravity="center_horizontal"
-        android:text="show_data" />
 
     <TextView
         android:id="@+id/empty_text_view"
@@ -22,30 +12,28 @@
         android:gravity="center"
         android:text="no_data_for_date"
         android:textAppearance="?android:attr/textAppearanceMedium"
-        android:visibility="gone" />
+        android:visibility="gone"
+        tools:ignore="MissingConstraints" />
 
-    <TextView
-        android:id="@+id/tv_blood_pressure"
-        android:layout_width="match_parent"
-        android:layout_height="37dp"
-        android:text="дав." />
+    <Button
+        android:id="@+id/btn_for_all"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Обновить список"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.497"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.062" />
 
-    <TextView
-        android:id="@+id/tv_pulse"
-        android:layout_width="match_parent"
-        android:layout_height="37dp"
-        android:text="пульс" />
+    <ListView
+        android:id="@+id/customerList"
+        android:layout_width="409dp"
+        android:layout_height="639dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/btn_for_all" />
 
-    <TextView
-        android:id="@+id/tv_blood_sugar"
-        android:layout_width="match_parent"
-        android:layout_height="37dp"
-        android:text="сахар" />
-
-    <TextView
-        android:id="@+id/tv_blood_cholesterol"
-        android:layout_width="match_parent"
-        android:layout_height="37dp"
-        android:text=" холестерин" />
-
-</LinearLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>

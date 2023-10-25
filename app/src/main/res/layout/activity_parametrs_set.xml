@@ -1,77 +1,105 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/gray"
     android:orientation="vertical">
 
-    <TextView
-        android:id="@+id/dateLabel"
+    <EditText
+        android:id="@+id/sugar_value"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Выберите дату:" />
-
-    <DatePicker
-        android:id="@+id/datePicker"
-        android:layout_width="wrap_content"
-        android:layout_height="399dp"
-        android:calendarViewShown="false"
-        android:headerBackground="@color/teal_700"
-        android:spinnersShown="true" />
-
-    <TextView
-        android:id="@+id/bpLabel"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Артериальное давление (мм рт. ст.):" />
+        android:ems="10"
+        android:hint="Введите значение сахара"
+        android:inputType="number"
+        app:layout_constraintBottom_toTopOf="@+id/pressure_value"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.502"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/date_analysis"
+        app:layout_constraintVertical_bias="0.806"
+        tools:ignore="MissingConstraints" />
 
     <EditText
-        android:id="@+id/bpInput"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:inputType="numberDecimal" />
-
-    <TextView
-        android:id="@+id/pulseLabel"
+        android:id="@+id/pressure_value"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Пульс (ударов в минуту):" />
+        android:ems="10"
+        android:hint="Введите значение давлени"
+        android:inputType="number"
+        app:layout_constraintBottom_toTopOf="@+id/save_by_date"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/date_analysis"
+        tools:ignore="MissingConstraints" />
 
     <EditText
-        android:id="@+id/pulseInput"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:inputType="number" />
+        android:id="@+id/date_analysis"
+        android:layout_width="338dp"
+        android:layout_height="48dp"
+        android:ems="10"
+        android:inputType="date"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.493"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.079"
+        tools:ignore="MissingConstraints" />
 
     <TextView
-        android:id="@+id/glucoseLabel"
+        android:id="@+id/textView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Уровень сахара в крови (ммоль/л):" />
+        android:text="Введите дату в формате(dd.mm.yy)"
+        app:layout_constraintBottom_toTopOf="@+id/date_analysis"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.457"
+        tools:ignore="MissingConstraints"
+        tools:layout_editor_absoluteX="89dp" />
 
     <EditText
-        android:id="@+id/glucoseInput"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:inputType="numberDecimal" />
-
-    <TextView
-        android:id="@+id/cholesterolLabel"
+        android:id="@+id/cholesterol_value"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Уровень холестерина в крови (ммоль/л):" />
-
-    <EditText
-        android:id="@+id/cholesterolInput"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:inputType="numberDecimal" />
+        android:ems="10"
+        android:hint="Введите холестерин"
+        android:inputType="number"
+        app:layout_constraintBottom_toTopOf="@+id/sugar_value"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.502"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/date_analysis"
+        app:layout_constraintVertical_bias="0.552"
+        tools:ignore="MissingConstraints" />
 
     <Button
-        android:id="@+id/saveButton"
+        android:id="@+id/save_by_date"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:background="@color/teal_700"
-        android:text="Сохранить" />
+        android:backgroundTint="@color/teal_700"
+        android:text="Сохранить данные"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/date_analysis"
+        app:layout_constraintVertical_bias="0.783"
+        tools:ignore="MissingConstraints" />
 
-</LinearLayout>
+    <EditText
+        android:id="@+id/NameByDate"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:hint="Введите имя"
+        android:inputType="text"
+        app:layout_constraintBottom_toTopOf="@+id/save_by_date"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.497"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/pressure_value"
+        app:layout_constraintVertical_bias="0.225" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

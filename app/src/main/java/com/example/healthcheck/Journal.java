@@ -1,28 +1,20 @@
 package com.example.healthcheck;
 
-import static com.example.healthcheck.DBHelper.COLUMN_blood_cholesterol;
-import static com.example.healthcheck.DBHelper.COLUMN_blood_pressure;
-import static com.example.healthcheck.DBHelper.COLUMN_blood_sugar;
-import static com.example.healthcheck.DBHelper.COLUMN_pulse;
-
-import android.annotation.SuppressLint;
-import android.database.Cursor;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.ArrayAdapter;
 import android.widget.Button;
-import android.widget.DatePicker;
+import android.widget.EditText;
 import android.widget.ListView;
 import android.widget.TextView;
 import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
 
-import java.util.Calendar;
-import java.util.Locale;
+import java.util.List;
 
 public class Journal extends AppCompatActivity {
-    private DBHelper dbHelper;
-    private ListView listView;
+    private DBHelper db;
     private TextView emptyTextView;
 
     @Override
@@ -30,32 +22,21 @@ public class Journal extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_journal);
 
-        dbHelper = new DBHelper(this);
-        emptyTextView = findViewById(R.id.empty_text_view);
+        ListView LV = findViewById(R.id.customerList);
+        Button btn = findViewById(R.id.btn_for_all);
 
-        // Добавляем DatePicker
-        DatePicker datePicker = findViewById(R.id.date_picker);
-        datePicker.init(Calendar.getInstance().get(Calendar.YEAR),
-                Calendar.getInstance().get(Calendar.MONTH),
-                Calendar.getInstance().get(Calendar.DAY_OF_MONTH),
-                null);
-
-        Button showButton = findViewById(R.id.show_button);
-        showButton.setOnClickListener(new View.OnClickListener() {
+        db = new DBHelper(Journal.this); ArrayAdapter customerArrayAdapter = new ArrayAdapter<Customer>(Journal.this, android.R.layout.simple_list_item_1,db.getAll());
+        LV.setAdapter(customerArrayAdapter);
+        btn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                int day = datePicker.getDayOfMonth();
-                int month = datePicker.getMonth() + 1;
-                int year = datePicker.getYear();
 
-                String date = String.format(Locale.getDefault(), "%04d-%02d-%02d", year, month, day);
-                Toast.makeText(Journal.this, date, Toast.LENGTH_SHORT).show();
+                DBHelper db = new DBHelper(Journal.this);
+                List <Customer> everyone = db.getAll();
 
-
-
-
-
-    }
+                ArrayAdapter customerArrayAdapter = new ArrayAdapter<Customer>(Journal.this, android.R.layout.simple_list_item_1,everyone);
+                LV.setAdapter(customerArrayAdapter);
+            }
         });
     }
 }
