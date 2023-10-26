@@ -6,6 +6,7 @@ import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ListView;
+import android.widget.Toast;
 
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
@@ -18,7 +19,7 @@ public class ValueByDate extends AppCompatActivity {
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.value_date);
-        EditText date = findViewById(R.id.SearchByDate);
+        EditText name = findViewById(R.id.SearchByDate);
         ListView LV = findViewById(R.id.ListByDate);
         Button btn = findViewById(R.id.find_btn);
 
@@ -26,7 +27,9 @@ public class ValueByDate extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 DBHelper db = new DBHelper(ValueByDate.this);
-                List <Customer> every = db.getAllByDate(date.getText().toString());
+                Toast.makeText(ValueByDate.this,name.getText().toString(),Toast.LENGTH_LONG).show();
+                List <Customer> every = db.getAllByName(name.getText().toString());
+
                 ArrayAdapter customerArrayAdapter = new ArrayAdapter<Customer>(ValueByDate.this, android.R.layout.simple_list_item_1,every);
                 LV.setAdapter(customerArrayAdapter);
             }

@@ -24,7 +24,8 @@
         <activity
             android:name=".ValueByDate"
             android:exported="false"
-        />
+            android:windowSoftInputMode="adjustPan"
+            />
         <activity
             android:name=".Journal"
             android:exported="false" />

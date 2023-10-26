@@ -23,7 +23,7 @@ public class DBHelper extends SQLiteOpenHelper {
     private static final int DATABASE_VERSION = 1;
     private static final String TABLE_NAME = "users";
     private static final String TABLE_NAME2 = "analysis";
-    private static final String COLUMN_ID = "id_users";
+        private static final String COLUMN_ID = "id_users";
     private static final String COLUMN_NAME = "name";
     private static final String COLUMN_EMAIL = "email";
     private static final String COLUMN_PASS = "pass";
@@ -136,6 +136,8 @@ public class DBHelper extends SQLiteOpenHelper {
                 String CustomerChol = cursor.getString(3);
                 String Customerpres = cursor.getString(4);
                 String CustomerSugar = cursor.getString(5);
+                Log.d("NAME",customerName);
+
 
                 Customer customer = new Customer(customerID,customerName,CustomerDate,CustomerChol,Customerpres,CustomerSugar);
                 returnList.add(customer);
@@ -149,10 +151,11 @@ public class DBHelper extends SQLiteOpenHelper {
 
     }
 
-    public List<Customer> getAllByDate(String date) {
+    public List<Customer> getAllByName(String name) {
         List <Customer> returnList= new ArrayList<>();
 
-        String query = "SELECT * FROM " + TABLE_NAME2 + " WHERE " + COLUMN_DATE + " = " + date ;
+        String query = "SELECT * FROM " + TABLE_NAME2 + " WHERE " + COLUMN_NAME + " = " + name;
+        Log.d("chose","column " + query);
         SQLiteDatabase db = this.getReadableDatabase();
         Cursor cursor = db.rawQuery(query,null);
 

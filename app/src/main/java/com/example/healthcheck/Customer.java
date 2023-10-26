@@ -11,11 +11,11 @@ public class Customer {
     @Override
     public String toString() {
         return
-                "Name='" + customerName + '\n' +
-                "Date='" + CustomerDate + '\n' +
-                "Chol='" + CustomerChol + '\n' +
-                "Pres='" + Customerpres + '\n' +
-                "Sugar='" + CustomerSugar;
+                "Name=" + customerName + '\n' +
+                "Date=" + CustomerDate + '\n' +
+                "Chol=" + CustomerChol + '\n' +
+                "Pres=" + Customerpres + '\n' +
+                "Sugar=" + CustomerSugar;
     }
 
     public Customer(int id, String name, String date, String chol, String pres, String sugar){
